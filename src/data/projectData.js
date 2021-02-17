@@ -14,5 +14,9 @@ export const projectData = [
     {
         title: "Monday.com App",
         img: "/img/balazs-ketyi-L0nipfx-Ry4-unsplash.jpg"
+    },
+    {
+        title: "Flow Chart Builder",
+        img: "/img/flowchart.png"
     }
 ];

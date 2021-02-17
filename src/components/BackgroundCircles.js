@@ -48,6 +48,8 @@ function BackgroundCircles() {
         for (var i = 0; i < cs.length; i++) {
             var left = parseInt(cs[i].style.left.replace("px", ""));
             var top = parseInt(cs[i].style.top.replace("px", ""));
+            console.log("v: " + verticalDirections[i])
+            console.log("h: " + horizontalDirections[i])
 
             if (top <= 0) {
                 verticalDirections[i] = 2;

@@ -15,18 +15,47 @@ body {
 .card {
   position: absolute;
   left: 50vw;
-  transform: translateX(-50%);
+  top: 50vh;
+  transform: translate(-50%, -50%);
   height: auto;
   width: 60vw;
-  background: linear-gradient(165.76deg, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0.38) 100%);
-  margin: 3em auto;
+  background: linear-gradient(165.76deg, rgba(55, 55, 55, 0.57) 0%, rgba(55, 55, 55, 0.38) 100%);
+  /* margin: 3em auto; */
   padding: 2px;
   border-radius: 40px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .full-page{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.button-wrapper{
+  width: 50%;
+  height: auto;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  margin: 4em auto;
+  background-color: rgba(0, 0, 0, 0);
+  transition: max-height 0.5s, background-color 5s 0.5s;
+}
+button{
+    border-radius: 10px;
+    padding: 1.5em;
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+}
+
+button:hover{
+    background:linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%);
 }

@@ -6,7 +6,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(156, 46, 224, 0.8) 24.48%, rgba(255, 1, 1, 0.6) 95.31%);
+  background: linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%);
   filter: blur(85px);
   z-index: -1;
 }

@@ -1,0 +1,33 @@
+nav{
+    width: 60%;
+    margin-bottom: 3em;
+    float: right;
+    height: auto;
+    opacity: 0;
+    max-height: 0;
+    transition: all 1s ease;
+    transition-delay: 0.5s;
+}
+ul{
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 1em 2em;
+    padding-left: 0;
+}
+li{
+    color: #ffffff;
+    list-style: none;
+}
+a{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.4);
+    padding: 2px 0;
+}
+a:hover{
+    border-bottom: 1px solid #ffffff;
+}
