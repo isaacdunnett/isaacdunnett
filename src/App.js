@@ -1,15 +1,17 @@
-import './App.css';
-import Heading from './Heading.js';
+import './css/App.css';
+import Heading from './modules/Heading.js';
+import ProjectGallery from "./modules/ProjectGallery.js";
+import BackgroundCircles from "./modules/BackgroundCircles.js";
 
 function App() {
   return (
-    <>
+    <section className="full-page">
       <div className="card">
-        <div className="card-border">
-          <Heading />
-        </div>
+        <Heading />
+        <ProjectGallery />
       </div>
-    </>
+      <BackgroundCircles />
+    </section>
   );
 }
 

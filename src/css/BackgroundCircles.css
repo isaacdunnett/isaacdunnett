@@ -1,0 +1,12 @@
+.floating{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(156, 46, 224, 0.8) 24.48%, rgba(255, 1, 1, 0.6) 95.31%);
+  filter: blur(85px);
+  z-index: -1;
+}

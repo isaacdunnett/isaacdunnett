@@ -1,0 +1,15 @@
+h1{
+    color: #ffffff;
+}
+.container{
+    margin: 2em;
+}
+.project-card-flex-container {
+    display: flex;
+    overflow-x: auto;
+    justify-content: left;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
