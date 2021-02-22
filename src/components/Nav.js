@@ -2,16 +2,22 @@ import '../css/Nav.css';
 
 const Nav = (props) => {
 
+    const toggleResumeView = () => {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        document.body.style.overflowY = 'hidden';
+        props.setViewResume(true);
+    }
+
     return (
         <nav style={{
-            maxHeight: props.show ? '100px' : '0px',
-            opacity: props.show ? 1 : 0
+            maxHeight: props.showWork ? '100px' : '0px',
+            opacity: props.showWork ? 1 : 0
         }}>
-            <ul>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#webdevservices">Get a Website</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#systemintegration">Automate Your Workflow</a></li>
+            <ul className="nav-list">
+                <li className="nav-list-item"><a className="nav-link">Portfolio</a></li>
+                <li className="nav-list-item"><a className="nav-link">Web Development</a></li>
+                <li className="nav-list-item"><a className="nav-link" onClick={toggleResumeView}>Resume</a></li>
+                <li className="nav-list-item"><a className="nav-link">Automate Your Workflow</a></li>
             </ul>
         </nav>
     );

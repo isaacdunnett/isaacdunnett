@@ -8,18 +8,18 @@ nav{
     transition: all 1s ease;
     transition-delay: 0.5s;
 }
-ul{
+.nav-list{
     display: flex;
     /* background-color: red; */
     justify-content: space-between;
     padding: 1em 2em;
     padding-left: 0;
 }
-li{
+.nav-list-item{
     color: #ffffff;
     list-style: none;
 }
-a{
+.nav-link{
     color: #ffffff;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -27,6 +27,7 @@ a{
     font-size: 1em;
     text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.4);
     padding: 2px 0;
+    cursor: pointer;
 }
 a:hover{
     border-bottom: 1px solid #ffffff;

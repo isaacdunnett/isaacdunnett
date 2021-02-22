@@ -9,28 +9,49 @@ body {
   height: 100vh;
   background-color: #000000;
   position: relative;
-  overflow-x: hidden;
+}
+
+#root{
+  height: 100vh;
+}
+
+.app{
+  display: flex;
+  overflow: visible;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
 }
 
 .card {
-  position: absolute;
-  left: 50vw;
-  top: 50vh;
-  transform: translate(-50%, -50%);
+  display: block;
+  overflow: hidden;
   height: auto;
-  width: 60vw;
+  width: 80vw;
   background: linear-gradient(165.76deg, rgba(55, 55, 55, 0.57) 0%, rgba(55, 55, 55, 0.38) 100%);
-  /* margin: 3em auto; */
+  margin: 3em auto;
+  margin-bottom: 0;
   padding: 2px;
   border-radius: 40px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .full-page{
-  z-index: -1;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  margin-bottom: 3em;
+}
+.background{
+  z-index: -1;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .button-wrapper{
@@ -45,7 +66,7 @@ body {
   background-color: rgba(0, 0, 0, 0);
   transition: max-height 0.5s, background-color 5s 0.5s;
 }
-button{
+.view-work-btn{
     border-radius: 10px;
     padding: 1.5em;
     border: none;
@@ -56,6 +77,23 @@ button{
     transition: all 0.5s;
 }
 
-button:hover{
+.view-work-btn:hover{
     background:linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%);
+}
+
+.bottom-margin{
+  height: 3em;
+  width: 100vw;
+}
+
+.resume{
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
 }
