@@ -60,7 +60,8 @@ const Resume = (props) => {
     }
 
     const goBackToMainView = () => {
-        document.body.style.overflowY = 'auto';
+        let root = document.getElementById('root');
+        root.style.overflowY = "auto";
         props.setViewResume(false);
     }
 

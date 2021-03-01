@@ -1,15 +1,56 @@
 import './css/App.css';
 import Nav from './components/Nav.js';
 import Heading from './components/Heading.js';
-import ProjectGallery from "./components/ProjectGallery.js";
+import ProjectsContainer from './components/ProjectsContainer.js';
 import BackgroundCircles from "./components/BackgroundCircles.js";
 import Resume from "./components/Resume.js";
-import { useState } from 'react';
+import Cinemegraph from "./img/coffee-cinemegraph.mp4";
+import { useState, useEffect } from 'react';
 
 function App() {
 
   const [viewMyWork, setViewMyWork] = useState(false);
   const [viewResume, setViewResume] = useState(false);
+  const [nightView, setNightView] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setNightView(true);
+      let rootStyle = document.querySelector(':root');
+      rootStyle.style.setProperty('--textColor', 'white');
+      rootStyle.style.setProperty('--oppositeTextColor', 'white');
+    }
+    console.log("night view: " + nightView);
+  }, [nightView]);
+
+  const handleBackground = () => {
+    if (nightView) {
+      return <BackgroundCircles />;
+    }
+    else {
+      return <div className="video-wrapper">
+        <video autoPlay loop muted>
+          <source src={Cinemegraph} type="video/mp4" />
+        </video>
+        <div className="video-overlay" style={{
+          backdropFilter: viewMyWork ? "blur(10px)" : "blur(0px)"
+        }}></div>
+      </div>;
+    }
+  }
+
+  const handleCardBackground = () => {
+    if (nightView) {
+      return "linear-gradient(165.76deg, rgba(55, 55, 55, 0.57) 0%, rgba(55, 55, 55, 0.38) 100%)";
+    }
+    else if (!nightView && viewMyWork) {
+      return "linear-gradient(165.76deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.32) 100%)";
+    }
+    else {
+      return "rgba(0,0,0,0)";
+    }
+
+  }
 
   const toggleViewMyWork = () => {
     if (viewMyWork) {
@@ -17,6 +58,8 @@ function App() {
     }
     else {
       setViewMyWork(true);
+      let root = document.getElementById('root');
+      root.style.overflowY = "auto";
     }
   }
 
@@ -26,19 +69,27 @@ function App() {
         transform: viewResume ? 'translateX(-100vw)' : 'translateX(0)'
       }}>
         <section className="full-page">
-          <div className="card">
+          <div className="card" style={{
+            background: handleCardBackground(),
+            boxShadow: nightView ? "5px 5px 10px 0px rgba(0, 0, 0, 0.3)" : "5px 5px 10px 0px rgba(0, 0, 0, 0)"
+          }}>
             <Nav showWork={viewMyWork} setViewResume={setViewResume} />
             <Heading />
             <div className="button-wrapper" style={{
               maxHeight: viewMyWork ? '2px' : 'auto',
-              background: viewMyWork ? 'white' : 'none'
+              background: viewMyWork ? 'var(--textColor)' : 'none'
             }}>
               <button className="view-work-btn" onClick={toggleViewMyWork} style={{
                 opacity: viewMyWork ? 0 : 1,
                 pointerEvents: viewMyWork ? 'none' : 'all'
               }}>View my work</button>
             </div>
-            <ProjectGallery show={viewMyWork} />
+            <div className="get-website-btn-wrapper" style={{
+              opacity: viewMyWork ? 1 : 0
+            }}>
+              <button className="get-website-btn">Request a website tailored for you</button>
+            </div>
+            <ProjectsContainer />
           </div>
           <div className="bottom-margin"></div>
         </section>
@@ -47,7 +98,7 @@ function App() {
         </section>
       </div>
       <section className="background">
-        <BackgroundCircles />
+        {handleBackground()}
       </section>
     </>
   );

@@ -22,7 +22,7 @@
 }
 
 .title-container h1 {
-    color: #ffffff;
+    color: var(--textColor);
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 2em;
@@ -31,7 +31,7 @@
 }
 
 .title-container h2{
-    color: #ffffff;
+    color: var(--textColor);
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1em;

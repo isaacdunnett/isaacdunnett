@@ -1,3 +1,7 @@
+:root{
+    --textColor: black;
+    --oppositeTextColor: white;
+}
 * {
   box-sizing: border-box;
 }
@@ -13,11 +17,12 @@ body {
 
 #root{
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .app{
   display: flex;
-  overflow: visible;
   white-space: nowrap;
   transition: all 0.5s ease;
   margin: 0;
@@ -29,12 +34,11 @@ body {
   overflow: hidden;
   height: auto;
   width: 80vw;
-  background: linear-gradient(165.76deg, rgba(55, 55, 55, 0.57) 0%, rgba(55, 55, 55, 0.38) 100%);
   margin: 3em auto;
   margin-bottom: 0;
   padding: 2px;
   border-radius: 40px;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
 }
 
 .full-page{
@@ -74,11 +78,14 @@ body {
     color: #ffffff;
     cursor: pointer;
     outline: none;
-    transition: all 0.5s;
+    transition: all 0.5s, transform 0.05s;
 }
 
 .view-work-btn:hover{
     background:linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%);
+}
+.view-work-btn:active{
+  transform: scale(0.9);
 }
 
 .bottom-margin{
@@ -96,4 +103,55 @@ body {
   overflow: auto;
   margin: 0;
   padding: 0;
+}
+.video-wrapper{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.video-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 5s ease;
+}
+
+.get-website-btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  margin: 1em;
+  margin-top: 0;
+  transition: all 1s ease 0.5s;
+}
+
+.get-website-btn{
+  font-size: 1em;
+  padding: 1em;
+  color: var(--textColor);
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid var(--textColor);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s;
+}
+.get-website-btn:hover{
+  background-color: var(--textColor);
+  color: var(--oppositeTextColor);
+}
+.get-website-btn:active{
+  transform: scale(0.95);
 }

@@ -10,7 +10,6 @@ function Heading() {
 
     const setRandomImg = () => {
         var r = Math.floor(Math.random() * 3) + 1;
-        console.log(r);
         switch (r) {
             case 1:
                 setProfileImg(img1);
@@ -27,10 +26,10 @@ function Heading() {
     }
 
     const changeImg = () => {
-        if (profileImg == img3) {
+        if (profileImg === img3) {
             setProfileImg(img1)
         }
-        else if (profileImg == img2) {
+        else if (profileImg === img2) {
             setProfileImg(img3);
         }
         else {

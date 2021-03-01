@@ -1,7 +1,6 @@
 nav{
-    width: 60%;
+    width: 100%;
     margin-bottom: 3em;
-    float: right;
     height: auto;
     opacity: 0;
     max-height: 0;
@@ -10,25 +9,37 @@ nav{
 }
 .nav-list{
     display: flex;
-    /* background-color: red; */
     justify-content: space-between;
-    padding: 1em 2em;
-    padding-left: 0;
+    padding: 1em 4em;
+}
+.nav-list div{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 .nav-list-item{
     color: #ffffff;
     list-style: none;
 }
 .nav-link{
-    color: #ffffff;
+    color: var(--textColor);
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1em;
-    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.4);
     padding: 2px 0;
     cursor: pointer;
+    outline: none;
 }
-a:hover{
-    border-bottom: 1px solid #ffffff;
+#home-svg{
+    fill: var(--textColor);
+}
+.nav-link.selected{
+    border-color: var(--textColor);
+}
+.nav-link:hover{
+    border-color: var(--textColor);
 }
