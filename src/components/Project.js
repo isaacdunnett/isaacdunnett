@@ -1,6 +1,15 @@
 import '../css/Project.css';
+import { useRef, useEffect } from 'react';
 
 const Project = (props) => {
+    const projectLink = useRef(0);
+
+    useEffect(() => {
+        props.tags.forEach(tag => {
+            projectLink.current.classList.add(tag.title);
+        });
+    });
+
 
     const handleTags = () => {
         return props.tags.map((tag, id) => {
@@ -12,9 +21,7 @@ const Project = (props) => {
     }
 
     return (
-        <a href={props.link} className={"project " + props.tags.map((tag) => {
-            return tag.title + " ";
-        })} target="_blank" rel="noreferrer">
+        <a href={props.link} ref={projectLink} className="project" target="_blank" rel="noreferrer">
             <div className="project-card">
                 <img className="project-img" src={props.img} alt={props.title} />
                 <h3 className="project-title">{props.title}</h3>

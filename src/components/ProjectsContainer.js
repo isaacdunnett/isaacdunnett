@@ -1,8 +1,10 @@
 import '../css/ProjectsContainer.css';
 import Project from '../components/Project.js';
 import ReactIcon from '../icons/react-icon.svg';
-import JavaIcon from '../icons/java-icon.svg';
 import HTML5Icon from '../icons/html5-icon.svg';
+import SwiftIcon from '../icons/swift-icon.svg';
+import JavaIcon from '../icons/java-icon.svg';
+import PythonIcon from '../icons/python-icon.svg';
 
 const ProjectsContainer = (props) => {
 
@@ -47,6 +49,26 @@ const ProjectsContainer = (props) => {
                 }
             });
         }
+        else if (id === "swift") {
+            projects.forEach(project => {
+                if (project.classList.contains("Swift")) {
+                    project.style.display = "block";
+                }
+                else {
+                    project.style.display = "none";
+                }
+            });
+        }
+        else if (id === "python") {
+            projects.forEach(project => {
+                if (project.classList.contains("Python")) {
+                    project.style.display = "block";
+                }
+                else {
+                    project.style.display = "none";
+                }
+            });
+        }
         else if (id === "java") {
             projects.forEach(project => {
                 if (project.classList.contains("Java")) {
@@ -80,6 +102,14 @@ const ProjectsContainer = (props) => {
                         <img src={HTML5Icon} alt="" />
                         <p>HTML/CSS/JS</p>
                     </div>
+                    <div id="swift" className="slider-option" onClick={(e) => handleSlider(e)}>
+                        <img src={SwiftIcon} alt="" />
+                        <p>Swift</p>
+                    </div>
+                    <div id="python" className="slider-option" onClick={(e) => handleSlider(e)}>
+                        <img src={PythonIcon} alt="" />
+                        <p>Python</p>
+                    </div>
                     <div id="java" className="slider-option" onClick={(e) => handleSlider(e)}>
                         <img src={JavaIcon} alt="" />
                         <p>Java</p>
@@ -89,14 +119,37 @@ const ProjectsContainer = (props) => {
             <div className="projects-flex-container" style={{
                 opacity: props.showWork ? 1 : 0
             }}>
-                <Project className="project-component" img={process.env.PUBLIC_URL + '/img/weston.png'} title="Weston Excavation and Construction Website" link="https://happy-austin-36389a.netlify.app/"
+                <Project className="project-component" img={process.env.PUBLIC_URL + '/img/weston.png'}
+                    title="Weston Excavation and Construction Website"
+                    link="https://happy-austin-36389a.netlify.app/"
                     tags={[
                         { title: "HTML/CSS/JS", icon: HTML5Icon }
                     ]}
                 />
-                <Project className="project-component" img={process.env.PUBLIC_URL + '/img/isaacdunnett.png'} title="isaacdunnett.com (This web app!)"
+                <Project className="project-component"
+                    img={process.env.PUBLIC_URL + '/img/isaacdunnett.png'}
+                    title="isaacdunnett.com (This web app!)"
                     tags={[
-                        { title: "React", icon: ReactIcon }
+                        { title: "React", icon: ReactIcon },
+                        { title: "HTML/CSS/JS", icon: HTML5Icon }
+                    ]}
+                />
+                <Project className="project-component"
+                    img={process.env.PUBLIC_URL + '/img/DriveMeCollage.png'}
+                    title="DriveMe IOS app"
+                    link="https://github.com/isaacdunnett/DriveMe"
+                    tags={[
+                        { title: "Swift", icon: SwiftIcon }
+                    ]}
+                />
+                <Project className="project-component"
+                    img={process.env.PUBLIC_URL + '/img/flowgrate.png'}
+                    title="Flowgrate app"
+                    link="https://github.com/isaacdunnett/flowgrate-app"
+                    tags={[
+                        { title: "React", icon: ReactIcon },
+                        { title: "Python", icon: PythonIcon },
+                        { title: "HTML/CSS/JS", icon: HTML5Icon }
                     ]}
                 />
             </div>

@@ -1,5 +1,5 @@
 .project{
-    flex-basis: 33%;
+    width: 33%;
     height: 400px;
     position: relative;
     transition: all 0.1s ease-in-out;
