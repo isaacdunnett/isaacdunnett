@@ -1,8 +1,8 @@
 
 .projects-container{
     width: 100%;
-    margin: 0 3em;
-    margin-bottom: 2em;
+    padding: 0 3em;
+    margin: 4em 0;
     position: relative;
 }
 
@@ -10,9 +10,65 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    transition: all 1s ease 1.25s;
 }
 
 #projects-h1{
+    color: var(--textColor);
     margin-left: 1em;
     font-weight: 400;
+    transition: all 1s ease 0.75s;
+}
+
+.projects-filter-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease 1s;
+}
+.slider-container{
+    min-width: 200px;
+    width: auto;
+    height: 32px;
+    background: var(--cardBackground);
+    border-radius: 30px;
+    box-shadow: var(--boxShadow);
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+.slider-option{
+    text-align: center;
+    color: var(--textColor);
+    margin: 5px 1em;
+    font-size: 16px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.slider-option.selected{
+    color: var(--oppositeTextColor);
+}
+
+.slider-option img{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.slider{
+    width: calc(100px + 0.5em);
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-left: 0.5em;
+    transform: translate(0, -50%);
+    background-color: var(--textColor);
+    border-radius: 30px;
+    transition: all 0.5s ease;
 }

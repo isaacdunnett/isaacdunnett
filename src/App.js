@@ -18,7 +18,8 @@ function App() {
       setNightView(true);
       let rootStyle = document.querySelector(':root');
       rootStyle.style.setProperty('--textColor', 'white');
-      rootStyle.style.setProperty('--oppositeTextColor', 'white');
+      rootStyle.style.setProperty('--oppositeTextColor', 'black');
+      rootStyle.style.setProperty('--cardBackground', 'linear-gradient(165.76deg, rgba(55, 55, 55, 0.57) 0%, rgba(55, 55, 55, 0.38) 100%)');
     }
     console.log("night view: " + nightView);
   }, [nightView]);
@@ -71,7 +72,8 @@ function App() {
         <section className="full-page">
           <div className="card" style={{
             background: handleCardBackground(),
-            boxShadow: nightView ? "5px 5px 10px 0px rgba(0, 0, 0, 0.3)" : "5px 5px 10px 0px rgba(0, 0, 0, 0)"
+            boxShadow: nightView ? "5px 5px 10px 0px rgba(0, 0, 0, 0.3)" : "5px 5px 10px 0px rgba(0, 0, 0, 0)",
+            maxHeight: viewMyWork ? "10000px" : "500px"
           }}>
             <Nav showWork={viewMyWork} setViewResume={setViewResume} />
             <Heading />
@@ -89,7 +91,7 @@ function App() {
             }}>
               <button className="get-website-btn">Request a website tailored for you</button>
             </div>
-            <ProjectsContainer />
+            <ProjectsContainer showWork={viewMyWork} />
           </div>
           <div className="bottom-margin"></div>
         </section>
