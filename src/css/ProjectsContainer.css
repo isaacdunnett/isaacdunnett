@@ -25,6 +25,7 @@
     display: flex;
     justify-content: center;
     transition: all 1s ease 1s;
+    margin: 1em;
 }
 .slider-container{
     min-width: 200px;
