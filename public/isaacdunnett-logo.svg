@@ -10,6 +10,7 @@
 </mask>
 <g mask="url(#mask0)">
 <rect x="4.87708" y="21.5" width="29" height="24" fill="url(#pattern0)"/>
+<path d="M13.4169 42C19.9169 42.616 27.9169 40 27.9169 40C27.4169 44.0751 25.4169 46 19.774 46C14.6197 46 13.9169 43.5 13.4169 42Z" fill="white"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
