@@ -113,4 +113,7 @@
     .mobile-nav-backdrop{
         display: none;
     }
+    .mobile-top-bar{
+        display: none;
+    }
 }

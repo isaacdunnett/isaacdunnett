@@ -244,3 +244,13 @@ h4 {
         grid-row: 4/5;
     }
 }
+
+/* mobile */
+@media (max-width: 768px){
+  .resume-back-btn{
+      display: none;
+  }
+  .resume-body{
+      padding-top: 3em;
+  }
+}
