@@ -12,6 +12,9 @@ nav{
     justify-content: space-between;
     padding: 1em 4em;
 }
+.nav-list-right .home{
+    display: none;
+}
 .nav-list div{
     display: flex;
     justify-content: space-between;
@@ -42,4 +45,23 @@ nav{
 }
 .nav-link:hover{
     border-color: var(--textColor);
+}
+
+/* tablet */
+@media (max-width: 1280px){
+  .nav-list-right{
+      width: 100% !important;
+  }
+  .nav-list-right .home{
+    display: block;
+}
+  .nav-list-left{
+      display: none !important;
+  }
+}
+
+@media (max-width: 768px){
+    nav{
+        display: none;
+    }
 }

@@ -1,0 +1,116 @@
+.mobile-nav-backdrop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mobile-top-bar{
+    width: 100vw;
+    height: auto;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+}
+
+.mobile-top-bar h1{
+    margin: auto;
+    height: 60px;
+    background-color: white;
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.nav-burger-btn{
+    margin: .5em 2em;
+    padding: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.nav-burger-btn div{
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 8px 0;
+}
+
+.dismiss-mobile-nav{
+    width: 25%;
+    height: 100%;
+}
+
+.mobile-nav{
+    display: flex;
+    z-index: 5;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: white;
+    box-shadow: var(--boxShadow);
+    max-width: 0;
+    padding: 2em;
+    overflow: hidden !important;
+    transition: max-width 0.5s ease;
+}
+
+.mobile-nav img{
+    width: 50px;
+    margin: 0 auto;
+}
+.mobile-nav h2{
+    margin: 1em auto;
+    margin-top: .5em;
+    font-weight: 400;
+}
+
+.mobile-nav-list-item{
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    margin: 1em 0;
+}
+
+.mobile-nav-link{
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: left;
+    border-radius: 6px;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.mobile-nav-link.home #home-svg{
+    transform: translateY(5px);
+    margin-top: -5px;
+}
+
+.mobile-nav-link.selected{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media (min-width: 768px){
+    .mobile-nav-backdrop{
+        display: none;
+    }
+}

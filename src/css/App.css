@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 :root{
     --textColor: black;
     --oppositeTextColor: white;
     --cardBackground: linear-gradient(165.76deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.32) 100%);
     --boxShadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    --viewWorkBtnBackground: black;
+    --viewWorkBtnHoverBackground: white;
 }
 * {
   box-sizing: border-box;
@@ -80,18 +83,19 @@ body {
     border-radius: 10px;
     padding: 1.5em;
     border: none;
-    background: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
+    background: var(--viewWorkBtnBackground);
+    color: var(--oppositeTextColor);
     cursor: pointer;
     outline: none;
     transition: all 0.5s, transform 0.05s;
 }
 
 .view-work-btn:hover{
-    background:linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%);
+  color:  var(--textColor);
+  background: var(--viewWorkBtnHoverBackground);
 }
 .view-work-btn:active{
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .bottom-margin{
@@ -160,4 +164,26 @@ video{
 }
 .get-website-btn:active{
   transform: scale(0.95);
+}
+
+/* tablet */
+@media (max-width: 1280px){
+  
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .card{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--oppositeTextColor) !important;
+  }
+  .bottom-margin{
+    display: none;
+  }
+  .background{
+    background-color: var(--oppositeTextColor);
+  }
 }

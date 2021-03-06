@@ -16,10 +16,11 @@ const Nav = (props) => {
             opacity: props.showWork ? 1 : 0
         }}>
             <ul className="nav-list">
-                <div>
-                    <li className="nav-list-item"><button className="nav-link selected"><Home id="home-svg" /></button></li>
+                <div className="nav-list-left">
+                    <li className="nav-list-item"><button className="nav-link home selected"><Home id="home-svg" /></button></li>
                 </div>
-                <div>
+                <div className="nav-list-right">
+                    <li className="nav-list-item"><button className="nav-link home selected"><Home id="home-svg" /></button></li>
                     <li className="nav-list-item"><button className="nav-link">Portfolio</button></li>
                     <li className="nav-list-item"><button className="nav-link">Web Development</button></li>
                     <li className="nav-list-item"><button className="nav-link" onClick={toggleResumeView}>Resume</button></li>
