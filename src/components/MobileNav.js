@@ -8,7 +8,6 @@ const MobileNav = (props) => {
         let root = document.getElementById('root')
         let mobileTopBar = document.querySelector('.mobile-top-bar h1')
         root.addEventListener('scroll', () => {
-            console.log(root.scrollTop)
             if (root.scrollTop > 300) {
                 mobileTopBar.style.opacity = 1
             }

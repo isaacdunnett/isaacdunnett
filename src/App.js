@@ -24,6 +24,7 @@ function App() {
       rootStyle.style.setProperty('--viewWorkBtnHoverBackground', 'linear-gradient(135deg, rgba(103, 33, 217, 0.8) 24.48%, rgba(1, 209, 255, 0.6) 95.31%)')
       rootStyle.style.setProperty('--viewWorkBtnBackground', 'rgba(0, 0, 0, 0.4)')
     }
+
   }, [nightView])
 
   const handleBackground = () => {

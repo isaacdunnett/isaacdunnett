@@ -145,6 +145,14 @@ h4 {
     background-color: rgb(120, 145, 176);
 }
 
+.exp-role, .education-section{
+    margin: 1em 0;
+}
+
+.exp-role h3, .education-section h3{
+    font-weight: 500;
+}
+
 /* styles for tablets */
 
 @media (min-width: 800px) {
@@ -186,7 +194,7 @@ h4 {
     #experience {
         grid-row: 3 / -1;
     }
-    #skills {
+    #edu {
         grid-row: 2 / 4;
     }
 }
@@ -232,16 +240,16 @@ h4 {
         grid-column: 2 / 4;
     }
     #edu {
-        grid-column: 1 / -1;
-        grid-row: 5 / -1;
+        grid-column: 1 / 2;
+        grid-row: 4/5;
     }
     #experience {
         grid-column: 2 / 4;
         grid-row: 3 / 5;
     }
     #skills {
-        grid-column: 1 / 2;
-        grid-row: 4/5;
+        grid-column: 1 / -1;
+        grid-row: 5 / -1;
     }
 }
 
