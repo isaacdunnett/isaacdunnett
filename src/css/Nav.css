@@ -2,8 +2,8 @@ nav{
     width: 100%;
     margin-bottom: 3em;
     height: auto;
-    opacity: 0;
-    max-height: 0;
+    opacity: 1;
+    max-height: auto;
     transition: all 1s ease;
     transition-delay: 0.5s;
 }

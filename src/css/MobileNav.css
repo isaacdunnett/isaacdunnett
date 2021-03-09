@@ -5,10 +5,11 @@
     top: 0;
     left: 0;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--mobileNavBackdrop);
     overflow: hidden !important;
     opacity: 0;
     pointer-events: none;
+    z-index: 5;
 }
 
 .mobile-top-bar{
@@ -24,11 +25,12 @@
 .mobile-top-bar h1{
     margin: auto;
     height: 60px;
-    background-color: white;
+    background-color: var(--oppositeTextColor);
     line-height: 60px;
     text-align: center;
     width: 100%;
     opacity: 0;
+    color: var(--textColor);
     transition: all 0.5s ease;
 }
 
@@ -47,7 +49,7 @@
 .nav-burger-btn div{
     width: 30px;
     height: 3px;
-    background-color: black;
+    background-color: var(--textColor);
     margin: 8px 0;
 }
 
@@ -62,11 +64,12 @@
     flex-direction: column;
     width: 75%;
     height: 100%;
-    background-color: white;
+    background-color: var(--oppositeTextColor);
     box-shadow: var(--boxShadow);
     max-width: 0;
     padding: 2em;
     overflow: hidden !important;
+    position: relative;
     transition: max-width 0.5s ease;
 }
 
@@ -78,6 +81,7 @@
     margin: 1em auto;
     margin-top: .5em;
     font-weight: 400;
+    color: var(--textColor);
 }
 
 .mobile-nav-list-item{
@@ -92,10 +96,12 @@
     height: 100%;
     border: none;
     text-align: left;
-    border-radius: 6px;
-    background-color: white;
+    border-radius: 30px;
+    background-color: var(--oppositeTextColor);
+    color: var(--textColor);
     outline: none;
     cursor: pointer;
+    padding-left: 2em;
 }
 
 .mobile-nav-link.home #home-svg{
@@ -104,7 +110,12 @@
 }
 
 .mobile-nav-link.selected{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--textColor);
+    color: black;
+}
+
+.mobile-nav-link.selected #home-svg{
+    fill: var(--oppositeTextColor);
 }
 
 

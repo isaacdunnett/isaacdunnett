@@ -1,0 +1,90 @@
+.card {
+  display: block;
+  overflow: hidden;
+  height: auto;
+  width: 80vw;
+  margin: 3em auto;
+  margin-bottom: 0;
+  padding: 2px;
+  border-radius: 40px;
+  position: relative;
+  transition: all 1s ease, max-height 7.5s ease;
+}
+
+.button-wrapper{
+  width: 50%;
+  height: auto;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  margin: 4em auto;
+  background-color: rgba(0, 0, 0, 0);
+  transition: max-height 0.5s, background-color 5s 0.5s;
+}
+.view-work-btn{
+  border-radius: 30px;
+  padding: 1.5em;
+  border: 1px solid var(--textColor);
+  background: var(--viewWorkBtnBackground);
+  color: var(--textColor);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s, transform 0.05s;
+}
+
+.view-work-btn:hover{
+  color:  var(--oppositeTextColor);
+  background: var(--textColor);
+}
+.view-work-btn:active{
+  transform: scale(0.95);
+}
+
+.bottom-margin{
+  height: 3em;
+  width: 100vw;
+}
+
+.get-website-btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 1s ease 0.5s;
+}
+
+.get-website-btn{
+  font-size: 1em;
+  padding: 1em;
+  color: var(--textColor);
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline: none;
+  border-radius: 30px;
+  border: 1px solid var(--textColor);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s;
+}
+.get-website-btn:hover{
+  background-color: var(--textColor);
+  color: var(--oppositeTextColor);
+}
+.get-website-btn:active{
+  transform: scale(0.95);
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .card{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: var(--oppositeTextColor) !important;
+  }
+  .bottom-margin{
+    display: none;
+  }
+}

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import '../css/Resume.css'
 import profileImg from '../img/7FAF3C07-7A77-4276-AA70-6CFCD4AE97C9_1_105_c.jpeg'
 
@@ -8,25 +8,15 @@ const Resume = (props) => {
     const linksTitle = useRef(0)
     const name = useRef(0)
 
-    useEffect(() => {
-        let root = document.getElementById('root')
-        root.addEventListener('scroll', () => {
-            console.log(root.scrollTop)
-            if (root.scrollTop > 0) {
-                root.scrollTop = 0
-            }
-        })
-    })
-
     // counter for even or odd to keep track of dark/light toggle
     var count = 0
 
     // toggle dark/light mode function
     const toggleLightDarkMode = () => {
-        var h2s = document.querySelectorAll(".resume-container h2")
-        var as = document.querySelectorAll("#nav a")
-        var mediaLinksText = document.querySelectorAll("#media-text a")
-        var i = 0
+        let h2s = document.querySelectorAll(".resume-container h2")
+        let as = document.querySelectorAll("#nav a")
+        let mediaLinksText = document.querySelectorAll("#media-text a")
+        let i = 0
         // if current mode is light
         if (count % 2 === 0) {
             resumeBody.current.style.backgroundColor = "rgb(36, 36, 36)"
@@ -69,15 +59,8 @@ const Resume = (props) => {
         count++
     }
 
-    const goBackToMainView = () => {
-        let root = document.getElementById('root')
-        root.style.overflowY = "auto"
-        props.setViewResume(false)
-    }
-
     return (
         <div className="resume-body" ref={resumeBody}>
-            <button className="resume-back-btn" onClick={goBackToMainView}>&#8592;</button>
             <div className="resume-container">
                 {/* Contains my personal details */}
                 <section id="personal-details">
@@ -97,10 +80,10 @@ const Resume = (props) => {
                 <section id="links">
                     <h2 className="resume-h2" ref={linksTitle}>Links</h2>
                     <ul id="nav">
-                        <li><a href="#exp-summary">Education</a></li>
-                        <li><a href="#experience">Employment</a></li>
-                        <li><a href="#skills">Volunteer Experience</a></li>
-                        <li><a href="#edu">Extra-Curricular</a></li>
+                        <li><a href="#edu">Education</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#other-edu">Other Education</a></li>
+                        <li><a href="#extra-curricular">Extra-Curricular</a></li>
                         <li><a href="https://www.dal.ca/faculty/computerscience.html">Dalhousie CompSci</a></li>
                     </ul>
                 </section>
@@ -171,7 +154,7 @@ const Resume = (props) => {
                     </section>
                 </section>
                 {/* Contains a list of my skills with proficiency levels  */}
-                <section id="skills" className="">
+                <section id="other-edu" className="">
                     <h2 className="resume-h2">Other Education</h2>
                     <ul id="skills-ul">
                         <li>Proficient in:
@@ -190,6 +173,15 @@ const Resume = (props) => {
                             </ul>
                         </li>
                         <li>Completed Calculus Challenge Exam at UNB</li>
+                    </ul>
+                </section>
+                <section id="extra-curricular" className="">
+                    <h2 className="resume-h2">Extra-Curricular Activities</h2>
+                    <ul>
+                        <li>Personal Software Projects</li>
+                        <li>Hockey</li>
+                        <li>Music</li>
+                        <li>Men's Fashion</li>
                     </ul>
                 </section>
             </div>

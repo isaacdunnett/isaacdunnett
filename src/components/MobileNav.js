@@ -1,6 +1,7 @@
 import "../css/MobileNav.css"
 import { ReactComponent as Home } from '../icons/home.svg'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const MobileNav = (props) => {
 
@@ -19,18 +20,13 @@ const MobileNav = (props) => {
 
     const [showMobileNav, setShowMobileNav] = useState(false);
 
-    const handleMobileNavLinkStyle = (e) => {
+    const handleMobileNavLink = (e) => {
         let links = document.querySelectorAll('.mobile-nav-link')
         links.forEach(link => {
             link.classList.remove('selected')
         })
         e.currentTarget.classList.add('selected')
-        let id = e.currentTarget.id
-        if (id === 'home') {
-        }
-        else if (id === 'resume') {
-            toggleResumeView()
-        }
+        toggleMobileNav()
     }
 
     const toggleMobileNav = () => {
@@ -40,14 +36,6 @@ const MobileNav = (props) => {
         else {
             setShowMobileNav(true)
         }
-    }
-
-    const toggleResumeView = () => {
-        toggleMobileNav()
-        let root = document.getElementById('root')
-        root.scrollTop = 0
-        root.style.overflowY = "hidden"
-        props.setViewResume(true)
     }
 
     return (
@@ -71,19 +59,19 @@ const MobileNav = (props) => {
                     <img src={process.env.PUBLIC_URL + '/isaacdunnett-logo.svg'} alt="" />
                     <h2>Isaac Dunnett</h2>
                     <li className="mobile-nav-list-item">
-                        <button className="mobile-nav-link home selected" id="home" onClick={handleMobileNavLinkStyle}><Home id="home-svg" /> Home</button>
+                        <Link to="/home"><button className="mobile-nav-link home selected" id="home" onClick={handleMobileNavLink}><Home id="home-svg" /> Home</button></Link>
                     </li>
                     <li className="mobile-nav-list-item">
-                        <button className="mobile-nav-link" id="portfolio" onClick={handleMobileNavLinkStyle}>Portfolio</button>
+                        <button className="mobile-nav-link" id="portfolio" onClick={handleMobileNavLink}>Portfolio</button>
                     </li>
                     <li className="mobile-nav-list-item">
-                        <button className="mobile-nav-link" id="web-dev" onClick={handleMobileNavLinkStyle}>Web Development</button>
+                        <Link to="/web-development"><button className="mobile-nav-link" id="web-dev" onClick={handleMobileNavLink}>Web Development</button></Link>
                     </li>
                     <li className="mobile-nav-list-item">
-                        <button className="mobile-nav-link" id="resume" onClick={handleMobileNavLinkStyle}>Resume</button>
+                        <Link to="/resume"><button className="mobile-nav-link" id="resume" onClick={handleMobileNavLink}>Resume</button></Link>
                     </li>
                     <li className="mobile-nav-list-item">
-                        <button className="mobile-nav-link" id="automate-your-workflow" onClick={handleMobileNavLinkStyle}>Automate Your Workflow</button>
+                        <button className="mobile-nav-link" id="automate-your-workflow" onClick={handleMobileNavLink}>Automate Your Workflow</button>
                     </li>
                 </div>
                 <div className="dismiss-mobile-nav" onClick={toggleMobileNav}></div>

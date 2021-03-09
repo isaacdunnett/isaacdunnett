@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 :root{
-    --textColor: black;
-    --oppositeTextColor: white;
-    --cardBackground: linear-gradient(165.76deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.32) 100%);
-    --boxShadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-    --viewWorkBtnBackground: black;
-    --viewWorkBtnHoverBackground: white;
+  --textColor: black;
+  --oppositeTextColor: white;
+  --cardBackground: linear-gradient(165.76deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.32) 100%);
+  --boxShadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  --mobileNavBackdrop: rgba(0, 0, 0, 0.5);
 }
 * {
   box-sizing: border-box;
@@ -26,7 +25,6 @@ body {
 #root{
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .app{
@@ -35,19 +33,6 @@ body {
   transition: all 0.5s ease;
   margin: 0;
   padding: 0;
-}
-
-.card {
-  display: block;
-  overflow: hidden;
-  height: auto;
-  width: 80vw;
-  margin: 3em auto;
-  margin-bottom: 0;
-  padding: 2px;
-  border-radius: 40px;
-  position: relative;
-  transition: all 1s ease, max-height 7.5s ease;
 }
 
 .full-page{
@@ -67,53 +52,6 @@ body {
   padding: 0;
 }
 
-.button-wrapper{
-  width: 50%;
-  height: auto;
-  max-height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: hidden;
-  margin: 4em auto;
-  background-color: rgba(0, 0, 0, 0);
-  transition: max-height 0.5s, background-color 5s 0.5s;
-}
-.view-work-btn{
-    border-radius: 10px;
-    padding: 1.5em;
-    border: none;
-    background: var(--viewWorkBtnBackground);
-    color: var(--oppositeTextColor);
-    cursor: pointer;
-    outline: none;
-    transition: all 0.5s, transform 0.05s;
-}
-
-.view-work-btn:hover{
-  color:  var(--textColor);
-  background: var(--viewWorkBtnHoverBackground);
-}
-.view-work-btn:active{
-  transform: scale(0.95);
-}
-
-.bottom-margin{
-  height: 3em;
-  width: 100vw;
-}
-
-.resume{
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 100vw;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-}
 .video-wrapper{
   position: relative;
   width: 100vw;
@@ -137,52 +75,8 @@ video{
   transition: all 5s ease;
 }
 
-.get-website-btn-wrapper{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  margin: 1em;
-  margin-top: 0;
-  transition: all 1s ease 0.5s;
-}
-
-.get-website-btn{
-  font-size: 1em;
-  padding: 1em;
-  color: var(--textColor);
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  outline: none;
-  border-radius: 8px;
-  border: 1px solid var(--textColor);
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s;
-}
-.get-website-btn:hover{
-  background-color: var(--textColor);
-  color: var(--oppositeTextColor);
-}
-.get-website-btn:active{
-  transform: scale(0.95);
-}
-
-/* tablet */
-@media (max-width: 1280px){
-  
-}
-
 /* mobile */
 @media (max-width: 768px){
-  .card{
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    background-color: var(--oppositeTextColor) !important;
-  }
-  .bottom-margin{
-    display: none;
-  }
   .background{
     background-color: var(--oppositeTextColor);
   }
