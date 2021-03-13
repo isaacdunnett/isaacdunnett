@@ -1,0 +1,59 @@
+.parallax{
+    opacity: 0;
+    animation: fade-in-up 1s ease 0.4s forwards;
+}
+
+.web-dev-s1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.web-dev-s1 .title-container{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.web-dev-s1 h1{
+    color: black;
+    opacity: 0;
+    animation: fade-in-up 0.5s ease 1.8s forwards;
+}
+
+.web-dev-s1 p{
+    color: black;
+    font-size: 20px;
+    opacity: 0;
+    margin-bottom: .5em;
+    animation: loud-entrance 0.2s linear 1.4s forwards;
+}
+
+#alert-icon{
+    color: yellow;
+    margin: 5px;
+    transform: translateY(10px);
+}
+
+
+@keyframes fade-in-up{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes loud-entrance{
+    from{
+        opacity: 0;
+        transform: translateY(-200%) scale(1.5);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

@@ -7,7 +7,6 @@ import BackgroundCircles from "./components/BackgroundCircles.js"
 import Resume from "./components/Resume.js"
 import MobileNav from "./components/MobileNav.js"
 import WebDev from "./components/WebDev.js"
-import Cinemegraph from "./img/coffee-cinemegraph.mp4"
 
 const App = () => {
 
@@ -26,22 +25,6 @@ const App = () => {
     }
 
   }, [nightView])
-
-  const handleBackground = () => {
-    if (nightView && window.innerWidth > 768) {
-      return <BackgroundCircles />
-    }
-    else if (!nightView && window.innerWidth > 768) {
-      return <div className="video-wrapper">
-        <video autoPlay loop muted>
-          <source src={Cinemegraph} type="video/mp4" />
-        </video>
-        <div className="video-overlay" style={{
-          backdropFilter: viewMyWork ? "blur(10px)" : "blur(0px)"
-        }}></div>
-      </div>
-    }
-  }
 
   return (
     <>
@@ -68,7 +51,7 @@ const App = () => {
         {/* fixed elements */}
         <MobileNav />
         <section className="background">
-          {handleBackground()}
+          <BackgroundCircles />
         </section>
       </BrowserRouter>
     </>
